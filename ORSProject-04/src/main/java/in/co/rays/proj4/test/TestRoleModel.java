@@ -1,0 +1,129 @@
+package in.co.rays.proj4.test;
+
+import java.sql.SQLException;
+import java.sql.Timestamp;
+
+
+import java.util.Date;
+
+import in.co.rays.proj4.bean.RoleBean;
+import in.co.rays.proj4.exception.ApplicationException;
+import in.co.rays.proj4.exception.DuplicateRecordException;
+import in.co.rays.proj4.model.RoleModel;
+
+public class TestRoleModel {
+	
+	public static RoleModel model = new RoleModel();
+	
+	
+	public static void main(String[] args) throws ApplicationException {
+	
+//		testAdd();
+//		testupdate();
+//		testDelete();
+		testFindByPk();
+		
+		
+	}
+	
+	//-------------------TestAdd--------------------//
+	public static void testAdd() throws ApplicationException {
+		
+//		RoleModel model = new RoleModel(); 
+		
+		RoleBean bean = new RoleBean();
+		
+		bean.setName("student");
+		bean.setDescription("student");
+		bean.setCreatedBy("admin");
+		bean.setModifiedBy("admin");
+		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
+		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
+		
+		model.add(bean);
+		
+		System.out.println("data added successfully");
+	}
+	
+	//-------------------------testupdate----------------------------//
+	public static void testupdate() throws ApplicationException {
+		
+		
+		RoleBean bean = new RoleBean();
+		RoleModel model = new RoleModel();
+
+		bean.setId(1);
+		bean.setName("Student");
+		bean.setDescription("Student");
+		bean.setCreatedBy("admin");
+		bean.setModifiedBy("admin");
+		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
+		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
+
+		try {
+			model.update(bean);
+			System.out.println("data updated successfully");
+		} catch (ApplicationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (DuplicateRecordException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	//---------------------testDelete----------------------//
+	public static void testDelete() {
+
+		RoleBean bean = new RoleBean();
+		RoleModel model = new RoleModel();
+
+		bean.setId(1);
+		try {
+			model.delete(bean);
+			System.out.println("data deleted successfully");
+		} catch (ApplicationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//---------------------testfindbypk-------------------------------//
+	public static void testFindByPk() {
+		
+		         RoleModel model = new RoleModel();
+				RoleBean existsbean;
+				
+				try {
+					existsbean = model.findByPk(1);
+					if(existsbean != null) {
+						System.out.println("ID exists");
+					} else {
+						System.out.println("no record found");
+					}
+				} catch (ApplicationException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				
+			}
+
+	//-----------------------test findbyname--------------------------//
+	public static void testFindByName() throws SQLException, ApplicationException {
+
+		RoleModel model = new RoleModel();
+		
+		RoleBean existsbean = model.findByName("hr");
+		
+		if(existsbean != null) {
+			System.out.println("name exists");
+		} else {
+			System.out.println("no record found");
+		}
+
+	}
+
+}
