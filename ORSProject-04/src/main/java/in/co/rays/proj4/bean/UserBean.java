@@ -72,10 +72,10 @@ public class UserBean extends BaseBean {
 		this.roleId = roleId;
 	}
 	
-	public String getGendeer() {
+	public String getGender() {
 		return gendeer;
 	}
-	public void setGendeer(String gendeer) {
+	public void setGender(String gendeer) {
 		this.gendeer = gendeer;
 	}
 	
