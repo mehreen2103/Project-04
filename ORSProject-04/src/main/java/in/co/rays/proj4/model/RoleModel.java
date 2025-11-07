@@ -1,3 +1,4 @@
+
 package in.co.rays.proj4.model;
 
 import java.sql.Connection;
@@ -37,6 +38,7 @@ public class RoleModel {
 		
 	}
 	////-------------Add Method--------------------//
+	
 	public long add(RoleBean bean ) throws ApplicationException {
 		
 		Connection conn = null;
@@ -73,6 +75,7 @@ public class RoleModel {
 	}
 
 	//-------------------------Update Method--------------------------------//
+	
 	public void update(RoleBean bean) throws ApplicationException, DuplicateRecordException {
 
 		Connection conn = null;
@@ -106,6 +109,7 @@ public class RoleModel {
 	}
 	
 	///-----------------------------Delete Method-----------------------------------//
+	
 	public void delete(RoleBean bean) throws ApplicationException {
 
 		Connection conn = null;
@@ -131,6 +135,7 @@ public class RoleModel {
 	}
 	
 	//------------------------------FindByPk Method--------------------------//
+	
 	public RoleBean findByPk(long pk) throws ApplicationException {
 
 		RoleBean bean = null;
@@ -194,11 +199,14 @@ public class RoleModel {
 		return bean;
 	}
 	
+	//------------------List Method-------------------------------------//
+	
 	public List<RoleBean> list() throws ApplicationException {
 		return search(null, 0, 0);
 	}
 
 	//--------------Search method------------------------//
+	
 	public List<RoleBean> search(RoleBean bean, int pageNo, int pageSize) throws ApplicationException {
 
 		StringBuffer sql = new StringBuffer("select * from st_role where 1=1");

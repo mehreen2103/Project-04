@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
-import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.bean.UserBean;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.exception.DatabaseException;
@@ -15,6 +13,8 @@ import in.co.rays.proj4.util.JDBCDataSource;
 
 public class UserModel {
 
+	
+	//*****Next pk Method*****//
 	public Integer nextPk() throws DatabaseException {
 		Connection conn = null;
 
@@ -44,7 +44,7 @@ public class UserModel {
 
 	}
 
-	// Add Method
+	// *****Add Method***** //
 
 	public long add(UserBean bean) throws ApplicationException, DuplicateRecordException {
 
@@ -80,21 +80,26 @@ public class UserModel {
 			pstmt.executeUpdate();
 			conn.commit();
 			pstmt.close();
+			
 		} catch (Exception e) {
+			
 			try {
 				conn.rollback();
+				
 			} catch (Exception ex) {
 				ex.printStackTrace();
+				
 				throw new ApplicationException("Exception : add rollback exception " + ex.getMessage());
 			}
 			throw new ApplicationException("Exception : Exception in add User");
+			
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
 		return pk;
 	}
 
-	// Delete method
+	// *****Delete method***** //
 
 	public void delete(UserBean bean) throws ApplicationException {
 
@@ -120,7 +125,7 @@ public class UserModel {
 		}
 	}
 
-	// Update method
+	// *****Update method***** //
 
 	public void update(UserBean bean) throws DuplicateRecordException, ApplicationException {
 
@@ -166,7 +171,7 @@ public class UserModel {
 		}
 	}
 
-	// find by pk method
+	// *****find by pk method***** //
 
 	public UserBean findByPk(long pk) throws ApplicationException {
 
@@ -207,7 +212,7 @@ public class UserModel {
 		return bean;
 	}
 
-	// find by login method
+	//***** find by login method *****//
 
 	public UserBean findByLogin(String login) throws ApplicationException {
 

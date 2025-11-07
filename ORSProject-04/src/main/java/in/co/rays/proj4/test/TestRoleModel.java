@@ -24,20 +24,21 @@ public class TestRoleModel {
 //		testDelete();
 //		testFindByPk();
 //		testFindByName();
-		testSearch();
+//		testSearch();
 		
 		
 	}
 	
 	//-------------------TestAdd--------------------//
+	
 	public static void testAdd() throws ApplicationException {
 		
 //		RoleModel model = new RoleModel(); 
 		
 		RoleBean bean = new RoleBean();
 		
-		bean.setName("student");
-		bean.setDescription("student");
+		bean.setName("kiosk");
+		bean.setDescription("kiosk");
 		bean.setCreatedBy("admin");
 		bean.setModifiedBy("admin");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
@@ -49,12 +50,12 @@ public class TestRoleModel {
 	}
 	
 	//-------------------------testupdate----------------------------//
+	
 	public static void testupdate() throws ApplicationException {
 		
 		
 		RoleBean bean = new RoleBean();
-		RoleModel model = new RoleModel();
-
+	
 		bean.setId(1);
 		bean.setName("Student");
 		bean.setDescription("Student");
@@ -62,6 +63,8 @@ public class TestRoleModel {
 		bean.setModifiedBy("admin");
 		bean.setCreatedDatetime(new Timestamp(new Date().getTime()));
 		bean.setModifiedDatetime(new Timestamp(new Date().getTime()));
+		
+		RoleModel model = new RoleModel();
 
 		try {
 			model.update(bean);
@@ -78,12 +81,13 @@ public class TestRoleModel {
 	}
 	
 	//---------------------testDelete----------------------//
+	
 	public static void testDelete() {
 
 		RoleBean bean = new RoleBean();
 		RoleModel model = new RoleModel();
 
-		bean.setId(1);
+		bean.setId(2);
 		try {
 			model.delete(bean);
 			System.out.println("data deleted successfully");
@@ -94,6 +98,7 @@ public class TestRoleModel {
 	}
 	
 	//---------------------testfindbypk-------------------------------//
+	
 	public static void testFindByPk() {
 		
 		         RoleModel model = new RoleModel();
@@ -115,6 +120,7 @@ public class TestRoleModel {
 			}
 
 	//-----------------------test findbyname--------------------------//
+	
 	public static void testFindByName() throws SQLException, ApplicationException {
 
 		RoleModel model = new RoleModel();
