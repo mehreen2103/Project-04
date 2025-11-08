@@ -1,19 +1,12 @@
 package in.co.rays.proj4.model;
-
 import java.sql.Connection;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.mysql.cj.jdbc.JdbcConnection;
-
 import in.co.rays.proj4.bean.CollegeBean;
-import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.exception.DatabaseException;
-import in.co.rays.proj4.exception.DuplicateRecordException;
 import in.co.rays.proj4.util.JDBCDataSource;
 
 public class CollegeModel {
