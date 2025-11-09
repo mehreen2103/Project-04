@@ -9,10 +9,10 @@ public class MarksheetBean extends BaseBean{
 	private Integer chemistry;
 	private Integer maths;
 	
-	public String getRoolNo() {
+	public String getRollNo() {
 		return rollNo;
 	}
-	public void setRoolNo(String roolNo) {
+	public void setRollNo(String roolNo) {
 		this.rollNo = roolNo;
 	}
 	
