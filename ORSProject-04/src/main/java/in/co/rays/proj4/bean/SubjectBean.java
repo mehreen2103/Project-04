@@ -3,7 +3,7 @@ package in.co.rays.proj4.bean;
 public class SubjectBean extends BaseBean{
 
 	private String name;
-	private String courseId;
+	private long courseId;
 	private String courseName;
 	private String description;
 	
@@ -15,13 +15,12 @@ public class SubjectBean extends BaseBean{
 		this.name = name;
 	}
 	
-	public String getCourseId() {
-		return courseId;
-	}
-	public void setCourseId(String courseId) {
+	public void setCourseId(long courseId) {
 		this.courseId = courseId;
 	}
-	
+	public long getCourseId() {
+		return courseId;
+	}
 	public String getCourseName() {
 		return courseName;
 	}

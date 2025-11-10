@@ -1,6 +1,7 @@
 package in.co.rays.proj4.util;
 
 import java.util.Calendar;
+
 import java.util.Date;
 
 public class DataValidator {
@@ -164,13 +165,13 @@ public class DataValidator {
 
 	public static void main(String[] args) {
 
-//		 Test isNull and isNotNull
+		// Test isNull and isNotNull
 		System.out.println("isNull Test:");
 		System.out.println("Empty String: " + isNull(""));
 		System.out.println("Null String: " + isNull(null));
 		System.out.println("Non-null String: " + isNotNull("Hello"));
 
-//		 Test isInteger
+		// Test isInteger
 		System.out.println("\nisInteger Test:");
 		System.out.println("Valid Integer String: '123' -> " + isInteger("123"));
 		System.out.println("Invalid Integer String: 'abc' -> " + isInteger("abc"));
@@ -219,11 +220,11 @@ public class DataValidator {
 		// Test isDate
 		System.out.println("\nisDate Test:");
 		System.out.println("Valid Date: '01-01-2025' -> " + isDate("2025-01-01"));
-		System.out.println("Invalid Date: '10/12/2024' -> " + isDate("10/12/2024"));
+		System.out.println("Invalid Date: '10/15/2024' -> " + isDate("10/15/2024"));
 
 		// Test isSunday
-		System.out.println("\n isSunday Test:");
-		System.out.println("Date on Sunday: '10/12/2024' -> " + isSunday("10/12/2024"));
-		System.out.println("Date not on Sunday: '10/12/2024' -> " + isSunday("10/12/2024"));
+		System.out.println("\nisSunday Test:");
+		System.out.println("Date on Sunday: '10/13/2024' -> " + isSunday("10/13/2024"));
+		System.out.println("Date not on Sunday: '10/15/2024' -> " + isSunday("10/15/2024"));
 	}
 }

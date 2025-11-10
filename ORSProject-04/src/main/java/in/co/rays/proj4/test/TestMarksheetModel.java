@@ -27,7 +27,7 @@ public class TestMarksheetModel {
 //		testFindByPk();
 //		testFindByRollNo();
 //		testSearch();
-		testDelete();
+//		testDelete();
 
 	}
 
