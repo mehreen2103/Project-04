@@ -1,6 +1,7 @@
 package in.co.rays.proj4.test;
 
 import java.sql.SQLException;
+
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -51,7 +52,7 @@ public class TestRoleModel {
 	
 	//-------------------------testupdate----------------------------//
 	
-	public static void testupdate() throws ApplicationException {
+	public static void testupdate() throws ApplicationException, DuplicateRecordException {
 		
 		
 		RoleBean bean = new RoleBean();
@@ -69,10 +70,7 @@ public class TestRoleModel {
 		try {
 			model.update(bean);
 			System.out.println("data updated successfully");
-		} catch (ApplicationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (DuplicateRecordException e) {
+		} catch (ApplicationException  | DuplicateRecordException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

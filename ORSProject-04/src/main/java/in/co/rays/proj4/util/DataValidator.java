@@ -1,7 +1,6 @@
 package in.co.rays.proj4.util;
 
 import java.util.Calendar;
-
 import java.util.Date;
 
 public class DataValidator {
@@ -224,7 +223,7 @@ public class DataValidator {
 
 		// Test isSunday
 		System.out.println("\nisSunday Test:");
-		System.out.println("Date on Sunday: '10/13/2024' -> " + isSunday("10/13/2024"));
-		System.out.println("Date not on Sunday: '10/15/2024' -> " + isSunday("10/15/2024"));
+		System.out.println("Date on Sunday: '10-12-2024' -> " + isSunday("10-12-2024"));
+		System.out.println("Date not on Sunday: '10/15/2024' -> " + isSunday("10-11-2025"));
 	}
 }
