@@ -1,5 +1,4 @@
 package in.co.rays.proj4.model;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +13,8 @@ import in.co.rays.proj4.util.JDBCDataSource;
 public class UserModel {
 
 	
-	//*****Next pk Method*****//
+	//-------------------------***Next pk Method***---------------------------//
+	
 	public Integer nextPk() throws DatabaseException {
 		Connection conn = null;
 
@@ -113,14 +113,22 @@ public class UserModel {
 			pstmt.executeUpdate();
 			conn.commit();
 			pstmt.close();
+			
 		} catch (Exception e) {
+			
 			try {
+				
 				conn.rollback();
+				
 			} catch (Exception ex) {
+				
 				throw new ApplicationException("Exception : Delete rollback exception " + ex.getMessage());
 			}
+			
 			throw new ApplicationException("Exception : Exception in delete User");
+			
 		} finally {
+			
 			JDBCDataSource.closeConnection(conn);
 		}
 	}
@@ -159,14 +167,21 @@ public class UserModel {
 			conn.commit();
 			pstmt.close();
 		} catch (Exception e) {
+			
 			e.printStackTrace();
+			
 			try {
 				conn.rollback();
+				
 			} catch (Exception ex) {
+				
 				throw new ApplicationException("Exception : Delete rollback exception " + ex.getMessage());
+				
 			}
 			throw new ApplicationException("Exception in updating User ");
+			
 		} finally {
+			
 			JDBCDataSource.closeConnection(conn);
 		}
 	}
@@ -203,10 +218,14 @@ public class UserModel {
 			}
 			rs.close();
 			pstmt.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 			throw new ApplicationException("Exception : Exception in getting User by pk");
+			
 		} finally {
+			
 			JDBCDataSource.closeConnection(conn);
 		}
 		return bean;

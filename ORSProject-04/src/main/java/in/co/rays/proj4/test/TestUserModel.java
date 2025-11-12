@@ -18,8 +18,8 @@ import in.co.rays.proj4.model.UserModel;
 public class TestUserModel {
 	public static void main(String[] args) throws DatabaseException, ParseException {
 
-//            testAdd();	
-		testDelete();
+//      testAdd();	
+//		testDelete();
 //		testUpdate();
 //		testFindByPk();
 //		testFindByLogin();
@@ -29,6 +29,7 @@ public class TestUserModel {
 	}
 
 	public static void testAdd() {
+		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 		UserBean bean = new UserBean();

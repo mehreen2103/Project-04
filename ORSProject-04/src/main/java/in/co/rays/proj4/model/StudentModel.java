@@ -10,7 +10,6 @@ import in.co.rays.proj4.bean.StudentBean;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.exception.DatabaseException;
 import in.co.rays.proj4.util.JDBCDataSource;
-
 public class StudentModel {
 	
 //-----------------------nextpk Method----------------------//

@@ -2,7 +2,7 @@ package in.co.rays.proj4.bean;
 
 import java.sql.Timestamp;
 
-public class BaseBean {
+public abstract class BaseBean implements DropDownListBean {
 
 	protected long id;
 	protected String createdBy;
@@ -28,6 +28,7 @@ public class BaseBean {
 	public String getModifiedBy() {
 		return modifiedBy;
 	}
+	
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
@@ -35,6 +36,7 @@ public class BaseBean {
 	public Timestamp getCreatedDatetime() {
 		return createdDatetime;
 	}
+	
 	public void setCreatedDatetime(Timestamp createdDatetime) {
 		this.createdDatetime = createdDatetime;
 	}

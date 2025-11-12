@@ -6,11 +6,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
 import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.exception.DatabaseException;
-import in.co.rays.proj4.exception.DuplicateRecordException;
 import in.co.rays.proj4.util.JDBCDataSource;
 
 public class RoleModel {
@@ -59,24 +57,34 @@ public class RoleModel {
 			pstmt.executeUpdate();
 			conn.commit();
 			pstmt.close();
+			
 		} catch (Exception e) {
+			
 			e.printStackTrace();
+			
 			try {
+				
 				conn.rollback();
+				
 			} catch (Exception ex) {
+				
 				throw new ApplicationException("Exception : add rollback exception" +ex.getMessage());
+				
 			}
+			
 			throw new ApplicationException("Exception : Exception in add Role");
 			
 		}finally {
+			
 			JDBCDataSource.closeConnection(conn);
+			
 		}
 		return pk;
 	}
 
 	//-------------------------Update Method--------------------------------//
 	
-	public void update(RoleBean bean) throws ApplicationException, DuplicateRecordException {
+	public void update(RoleBean bean) throws ApplicationException {
 
 		Connection conn = null;
 
@@ -108,7 +116,7 @@ public class RoleModel {
 		}
 	}
 	
-	///-----------------------------Delete Method-----------------------------------//
+	///-----------------------------Delete Method-----------------------------------///
 	
 	public void delete(RoleBean bean) throws ApplicationException {
 
