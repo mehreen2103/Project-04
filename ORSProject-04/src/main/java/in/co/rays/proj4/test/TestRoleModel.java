@@ -19,7 +19,7 @@ public class TestRoleModel {
 	
 //		testAdd();
 //		testupdate();
-//		testDelete();
+		testDelete();
 //		testFindByPk();
 //		testFindByName();
 //		testSearch();
@@ -85,7 +85,7 @@ public class TestRoleModel {
 	public static void testDelete() {
 
 		RoleBean bean = new RoleBean();
-		bean.setId(2);
+		bean.setId(5);
 		
 		RoleModel model = new RoleModel();
 		try {
@@ -126,7 +126,7 @@ public class TestRoleModel {
 
 		RoleModel model = new RoleModel();
 		
-		RoleBean existsbean = model.findByName("hr");
+		RoleBean existsbean = model.findByName("kiosk");
 		
 		if(existsbean != null) {
 			
@@ -148,7 +148,7 @@ public class TestRoleModel {
 			RoleBean bean = new RoleBean();
 			
 			List list = new ArrayList();
-			bean.setName("student");
+			bean.setName("Admin");
 			list = model.search(bean, 0, 0);
 			
 			if (list.size() < 0) {

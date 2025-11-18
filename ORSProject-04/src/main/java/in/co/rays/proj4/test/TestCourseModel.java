@@ -113,7 +113,7 @@ public class TestCourseModel {
 			CourseModel model = new CourseModel();
 			CourseBean bean = new CourseBean();
 			List list = new ArrayList();
-			bean.setDuration("2 year");;
+			bean.setDuration("3 year");;
 			list = model.search(bean, 0, 0);
 			if (list.size() < 0) {
 				System.out.println("Test Search fail");

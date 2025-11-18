@@ -1,6 +1,7 @@
 package in.co.rays.proj4.test;
 
 import java.sql.SQLException;
+
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,20 +9,19 @@ import java.util.Iterator;
 import java.util.List;
 
 import in.co.rays.proj4.bean.CollegeBean;
-import in.co.rays.proj4.bean.RoleBean;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.model.CollegeModel;
-import in.co.rays.proj4.model.RoleModel;
 
 public class TestCollegeModel {
 
 	public static void main(String[] args) throws SQLException, ApplicationException {
+		
 //		testAdd();
 //		testUpdate();
-//		testDelete();
+		testDelete();
 //		testFindByPk();
 //		testFindByName();
-		testSearch();
+//		testSearch();
 		
 	}
 	

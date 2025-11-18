@@ -9,12 +9,14 @@ public class MarksheetBean extends BaseBean{
 	private Integer chemistry;
 	private Integer maths;
 	
+	
 	public String getRollNo() {
 		return rollNo;
 	}
-	public void setRollNo(String roolNo) {
-		this.rollNo = roolNo;
+	public void setRollNo(String rollNo) {
+		this.rollNo = rollNo;
 	}
+	
 	
 	public long getStudentId() {
 		return studentId;
@@ -23,12 +25,14 @@ public class MarksheetBean extends BaseBean{
 		this.studentId = studentId;
 	}
 	
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	
 	public Integer getPhysics() {
 		return physics;
@@ -37,6 +41,7 @@ public class MarksheetBean extends BaseBean{
 		this.physics = physics;
 	}
 	
+	
 	public Integer getChemistry() {
 		return chemistry;
 	}
@@ -44,12 +49,15 @@ public class MarksheetBean extends BaseBean{
 		this.chemistry = chemistry;
 	}
 	
+	
 	public Integer getMaths() {
 		return maths;
 	}
 	public void setMaths(Integer maths) {
 		this.maths = maths;
 	}
+	
+	
 	@Override
 	public String getKey() {
 		// TODO Auto-generated method stub

@@ -18,8 +18,8 @@ import in.co.rays.proj4.model.UserModel;
 public class TestUserModel {
 	public static void main(String[] args) throws DatabaseException, ParseException {
 
-//      testAdd();	
-//		testDelete();
+ //     testAdd();	
+		testDelete();
 //		testUpdate();
 //		testFindByPk();
 //		testFindByLogin();
@@ -34,12 +34,12 @@ public class TestUserModel {
 
 		UserBean bean = new UserBean();
 
-		bean.setFirstName("Mehreen");
+		bean.setFirstName("inaya");
 		bean.setLastName("Ansari");
-		bean.setLogin("meh@gmail.com");
+		bean.setLogin("ina@gmail.com");
 		bean.setPassword("123");
 		try {
-			bean.setDob(sdf.parse("2004-11-03"));
+			bean.setDob(sdf.parse("2008-01-10"));
 		} catch (ParseException e1) {
 
 			e1.printStackTrace();
@@ -64,7 +64,7 @@ public class TestUserModel {
 	public static void testDelete() {
 
 		UserBean bean = new UserBean();
-		bean.setId(1);
+		bean.setId(3);
 
 		UserModel model = new UserModel();
 
@@ -131,7 +131,7 @@ public class TestUserModel {
 
 		UserModel model = new UserModel();
 		try {
-			UserBean bean = model.findByLogin("ma@gmail.com");
+			UserBean bean = model.findByLogin("meh@gmail.com");
 
 			if (bean == null) {
 				System.out.println("Test Find by name fail");
@@ -150,7 +150,7 @@ public class TestUserModel {
 			UserModel model = new UserModel();
 			UserBean bean = new UserBean();
 			List list = new ArrayList();
-			bean.setFirstName("Rishabh");
+			bean.setFirstName("mehreen");
 			list = model.search(bean, 0, 0);
 			if (list.size() < 0) {
 				System.out.println("Test Serach fail");
@@ -174,7 +174,7 @@ public class TestUserModel {
 
 		UserBean bean;
 		try {
-			bean = model.authenticate("ma@gmail.com", "123");
+			bean = model.authenticate("meh@gmail.com", "123");
 			if (bean != null) {
 				System.out.println("User found:");
 				System.out.println(bean.getFirstName());

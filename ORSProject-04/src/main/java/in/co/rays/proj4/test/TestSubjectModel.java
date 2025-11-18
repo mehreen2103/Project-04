@@ -30,10 +30,10 @@ public class TestSubjectModel {
 //		
 //		
 //		testAdd();
-//		testUpdate();
+		testUpdate();
 //		testFindByPk();
 //		testFindByName();
-		testSearch();
+//		testSearch();
 		
 		
 	}

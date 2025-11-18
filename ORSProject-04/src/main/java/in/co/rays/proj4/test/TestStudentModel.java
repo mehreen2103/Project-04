@@ -1,6 +1,5 @@
 package in.co.rays.proj4.test;
 
-import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,22 +7,19 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-
-import in.co.rays.proj4.bean.CollegeBean;
 import in.co.rays.proj4.bean.StudentBean;
 import in.co.rays.proj4.exception.ApplicationException;
-import in.co.rays.proj4.model.CollegeModel;
 import in.co.rays.proj4.model.StudentModel;
 
 public class TestStudentModel {
 	public static void main(String[] args) throws ParseException  {
 		
-//		testAdd();
+	//	testAdd();
 //		testUpdate();
 //		testDelete();
 //		testFindByPk();
 //		testfindByEmailID();
-		testSearch();
+//		testSearch();
 	}
 	
 	//testadd
