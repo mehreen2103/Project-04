@@ -19,10 +19,10 @@ public class TestRoleModel {
 	
 //		testAdd();
 //		testupdate();
-		testDelete();
+//		testDelete();
 //		testFindByPk();
 //		testFindByName();
-//		testSearch();
+		testSearch();
 			
 	}
 	

@@ -12,36 +12,36 @@ import in.co.rays.proj4.exception.DatabaseException;
 import in.co.rays.proj4.util.JDBCDataSource;
 
 public class RoleModel {
-	
+
 	public Integer nextPk() throws DatabaseException {
-		
+
 		Connection conn = null;
 		int pk = 0;
-		
+
 		try {
 			conn = JDBCDataSource.getConnection();
-			PreparedStatement pstmt = conn.prepareStatement("select max(id)from st_role" );
+			PreparedStatement pstmt = conn.prepareStatement("select max(id)from st_role");
 			ResultSet rs = pstmt.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				pk = rs.getInt(1);
 			}
 			rs.close();
 			pstmt.close();
 		} catch (Exception e) {
 			throw new DatabaseException("Exception : Exception in getting PK");
-		}finally {
+		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
 		return pk + 1;
-		
+
 	}
-	////-------------Add Method--------------------//
-	
-	public long add(RoleBean bean ) throws ApplicationException {
-		
+	//// -------------Add Method--------------------//
+
+	public long add(RoleBean bean) throws ApplicationException {
+
 		Connection conn = null;
 		int pk = 0;
-		
+
 		try {
 			pk = nextPk();
 			conn = JDBCDataSource.getConnection();
@@ -57,38 +57,37 @@ public class RoleModel {
 			pstmt.executeUpdate();
 			conn.commit();
 			pstmt.close();
-			
+
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
-			
+
 			try {
-				
+
 				conn.rollback();
-				
+
 			} catch (Exception ex) {
-				
-				throw new ApplicationException("Exception : add rollback exception" +ex.getMessage());
-				
+
+				throw new ApplicationException("Exception : add rollback exception" + ex.getMessage());
+
 			}
-			
+
 			throw new ApplicationException("Exception : Exception in add Role");
-			
-		}finally {
-			
+
+		} finally {
+
 			JDBCDataSource.closeConnection(conn);
-			
+
 		}
 		return pk;
 	}
 
-	//-------------------------Update Method--------------------------------//
-	
+	// -------------------------Update Method--------------------------------//
+
 	public void update(RoleBean bean) throws ApplicationException {
 
 		Connection conn = null;
 
-		
 		try {
 			conn = JDBCDataSource.getConnection();
 			conn.setAutoCommit(false);
@@ -115,9 +114,9 @@ public class RoleModel {
 			JDBCDataSource.closeConnection(conn);
 		}
 	}
-	
-	///-----------------------------Delete Method-----------------------------------///
-	
+
+	/// -----------------------------Delete Method-----------------------------------///
+
 	public void delete(RoleBean bean) throws ApplicationException {
 
 		Connection conn = null;
@@ -141,9 +140,9 @@ public class RoleModel {
 			JDBCDataSource.closeConnection(conn);
 		}
 	}
-	
-	//------------------------------FindByPk Method--------------------------//
-	
+
+	// ------------------------------FindByPk Method--------------------------//
+
 	public RoleBean findByPk(long pk) throws ApplicationException {
 
 		RoleBean bean = null;
@@ -176,7 +175,7 @@ public class RoleModel {
 		return bean;
 	}
 
-	//---------------------------FindByName Method-----------------------------//
+	// ---------------------------FindByName Method-----------------------------//
 
 	public RoleBean findByName(String name) throws ApplicationException {
 		StringBuffer sql = new StringBuffer("select * from st_role where name = ?");
@@ -206,36 +205,36 @@ public class RoleModel {
 		}
 		return bean;
 	}
-	
-	//------------------List Method-------------------------------------//
-	
+
+	// ------------------List Method-------------------------------------//
+
 	public List<RoleBean> list() throws ApplicationException {
 		return search(null, 0, 0);
 	}
 
-	//--------------Search method------------------------//
-	
+	// --------------Search method------------------------//
 	public List<RoleBean> search(RoleBean bean, int pageNo, int pageSize) throws ApplicationException {
 
 		StringBuffer sql = new StringBuffer("select * from st_role where 1=1");
 
 		if (bean != null) {
+
 			if (bean.getId() > 0) {
 				sql.append(" and id = " + bean.getId());
 			}
-		}
-		if (bean.getName() != null && bean.getName().length() > 0) {
-			sql.append(" and name like '" + bean.getName() + "%'");
 
-		}
-		if (bean.getDescription() != null && bean.getDescription().length() > 0) {
-			sql.append(" and description like '" + bean.getDescription() + "%'");
+			if (bean.getName() != null && bean.getName().length() > 0) {
+				sql.append(" and name like '" + bean.getName() + "%'");
+			}
+
+			if (bean.getDescription() != null && bean.getDescription().length() > 0) {
+				sql.append(" and description like '" + bean.getDescription() + "%'");
+			}
 		}
 
 		if (pageSize > 0) {
 			pageNo = (pageNo - 1) * pageSize;
 			sql.append(" limit " + pageNo + ", " + pageSize);
-
 		}
 
 		Connection conn = null;
@@ -247,26 +246,27 @@ public class RoleModel {
 			ResultSet rs = pstmt.executeQuery();
 
 			while (rs.next()) {
-				bean = new RoleBean();
-				bean.setId(rs.getLong(1));
-				bean.setName(rs.getString(2));
-				bean.setDescription(rs.getString(3));
-				bean.setCreatedBy(rs.getString(4));
-				bean.setModifiedBy(rs.getString(5));
-				bean.setCreatedDatetime(rs.getTimestamp(6));
-				bean.setModifiedDatetime(rs.getTimestamp(7));
-				list.add(bean);
+				RoleBean rb = new RoleBean();
+				rb.setId(rs.getLong(1));
+				rb.setName(rs.getString(2));
+				rb.setDescription(rs.getString(3));
+				rb.setCreatedBy(rs.getString(4));
+				rb.setModifiedBy(rs.getString(5));
+				rb.setCreatedDatetime(rs.getTimestamp(6));
+				rb.setModifiedDatetime(rs.getTimestamp(7));
+				list.add(rb);
 			}
+
 			rs.close();
 			pstmt.close();
-		} catch (Exception e) {
-			throw new ApplicationException("Exception: Exception in search role" + e.getMessage());
 
+		} catch (Exception e) {
+			throw new ApplicationException("Exception: Exception in search role " + e.getMessage());
 		} finally {
 			JDBCDataSource.closeConnection(conn);
 		}
+
 		return list;
 	}
-	
-	
+
 }

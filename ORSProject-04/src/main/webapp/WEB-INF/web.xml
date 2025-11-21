@@ -22,6 +22,60 @@
   	<description></description>
   	<servlet-class>in.co.rays.proj4.controller.UserRegistrationCtl</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UserCtl</servlet-name>
+  	<display-name>UserCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.UserCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RoleCtl</servlet-name>
+  	<display-name>RoleCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.RoleCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CollegeCtl</servlet-name>
+  	<display-name>CollegeCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.CollegeCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>StudentCtl</servlet-name>
+  	<display-name>StudentCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.StudentCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MarksheetCtl</servlet-name>
+  	<display-name>MarksheetCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.MarksheetCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CourseCtl</servlet-name>
+  	<display-name>CourseCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.CourseCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SubjectCtl</servlet-name>
+  	<display-name>SubjectCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.SubjectCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>FacultyCtl</servlet-name>
+  	<display-name>FacultyCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.FacultyCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UserListCtl</servlet-name>
+  	<display-name>UserListCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.UserListCtl</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>WelcomeCtl</servlet-name>
   	<url-pattern>/WelcomeCtl</url-pattern>
@@ -33,5 +87,41 @@
   <servlet-mapping>
   	<servlet-name>UserRegistrationCtl</servlet-name>
   	<url-pattern>/UserRegistrationCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserCtl</servlet-name>
+  	<url-pattern>/UserCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RoleCtl</servlet-name>
+  	<url-pattern>/RoleCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CollegeCtl</servlet-name>
+  	<url-pattern>/CollegeCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>StudentCtl</servlet-name>
+  	<url-pattern>/StudentCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MarksheetCtl</servlet-name>
+  	<url-pattern>/MarksheetCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CourseCtl</servlet-name>
+  	<url-pattern>/CourseCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SubjectCtl</servlet-name>
+  	<url-pattern>/SubjectCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FacultyCtl</servlet-name>
+  	<url-pattern>/FacultyCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserListCtl</servlet-name>
+  	<url-pattern>/UserListCtl</url-pattern>
   </servlet-mapping>
 </web-app>
