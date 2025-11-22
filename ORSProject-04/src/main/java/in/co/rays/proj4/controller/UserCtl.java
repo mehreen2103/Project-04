@@ -28,7 +28,6 @@ public class UserCtl extends BaseCtl {
 		
 		try {
 			List<RoleBean> roleList = roleModel.list();
-			System.out.println("data is coming");
 			request.setAttribute("roleList", roleList);
 		} catch (ApplicationException e) {
 			e.printStackTrace();
@@ -135,7 +134,7 @@ public class UserCtl extends BaseCtl {
 		bean.setRoleId(DataUtility.getLong(request.getParameter("roleId")));
 
 		populateDTO(bean, request);
-		System.out.println("Data coming");
+		
 
 		return bean;
 	}

@@ -76,6 +76,48 @@
   	<description></description>
   	<servlet-class>in.co.rays.proj4.controller.UserListCtl</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>RoleListCtl</servlet-name>
+  	<display-name>RoleListCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.RoleListCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CollegeListCtl</servlet-name>
+  	<display-name>CollegeListCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.CollegeListCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>StudentListCtl</servlet-name>
+  	<display-name>StudentListCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.StudentListCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CourseListCtl</servlet-name>
+  	<display-name>CourseListCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.CourseListCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>SubjectListCtl</servlet-name>
+  	<display-name>SubjectListCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.SubjectListCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MarksheetListCtl</servlet-name>
+  	<display-name>MarksheetListCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.MarksheetListCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>FacultyListCtl</servlet-name>
+  	<display-name>FacultyListCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.FacultyListCtl</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>WelcomeCtl</servlet-name>
   	<url-pattern>/WelcomeCtl</url-pattern>
@@ -123,5 +165,33 @@
   <servlet-mapping>
   	<servlet-name>UserListCtl</servlet-name>
   	<url-pattern>/UserListCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RoleListCtl</servlet-name>
+  	<url-pattern>/RoleListCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CollegeListCtl</servlet-name>
+  	<url-pattern>/CollegeListCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>StudentListCtl</servlet-name>
+  	<url-pattern>/StudentListCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CourseListCtl</servlet-name>
+  	<url-pattern>/CourseListCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SubjectListCtl</servlet-name>
+  	<url-pattern>/SubjectListCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MarksheetListCtl</servlet-name>
+  	<url-pattern>/MarksheetListCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FacultyListCtl</servlet-name>
+  	<url-pattern>/FacultyListCtl</url-pattern>
   </servlet-mapping>
 </web-app>
