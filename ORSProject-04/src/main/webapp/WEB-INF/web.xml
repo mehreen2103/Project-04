@@ -118,6 +118,42 @@
   	<description></description>
   	<servlet-class>in.co.rays.proj4.controller.FacultyListCtl</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>TimetableCtl</servlet-name>
+  	<display-name>TimetableCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.TimetableCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>GetMarksheetCtl</servlet-name>
+  	<display-name>GetMarksheetCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.GetMarksheetCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MarksheetMeritListCtl</servlet-name>
+  	<display-name>MarksheetMeritListCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.MarksheetMeritListCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>MyProfileCtl</servlet-name>
+  	<display-name>MyProfileCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.MyProfileCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ChangePasswordCtl</servlet-name>
+  	<display-name>ChangePasswordCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.ChangePasswordCtl</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ForgotPasswordCtl</servlet-name>
+  	<display-name>ForgotPasswordCtl</display-name>
+  	<description></description>
+  	<servlet-class>in.co.rays.proj4.controller.ForgotPasswordCtl</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>WelcomeCtl</servlet-name>
   	<url-pattern>/WelcomeCtl</url-pattern>
@@ -193,5 +229,29 @@
   <servlet-mapping>
   	<servlet-name>FacultyListCtl</servlet-name>
   	<url-pattern>/FacultyListCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TimetableCtl</servlet-name>
+  	<url-pattern>/TimetableCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GetMarksheetCtl</servlet-name>
+  	<url-pattern>/GetMarksheetCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MarksheetMeritListCtl</servlet-name>
+  	<url-pattern>/MarksheetMeritListCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MyProfileCtl</servlet-name>
+  	<url-pattern>/MyProfileCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ChangePasswordCtl</servlet-name>
+  	<url-pattern>/ChangePasswordCtl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ForgotPasswordCtl</servlet-name>
+  	<url-pattern>/ForgotPasswordCtl</url-pattern>
   </servlet-mapping>
 </web-app>
