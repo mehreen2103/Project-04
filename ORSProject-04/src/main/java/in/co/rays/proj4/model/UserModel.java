@@ -1,4 +1,4 @@
-package in.co.rays.proj4.model;
+ package in.co.rays.proj4.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -358,7 +358,7 @@ public class UserModel {
 		return list;
 	}
 
-	// authenticate method
+	// Authenticate method
 
 	public UserBean authenticate(String login, String password) throws ApplicationException {
 
@@ -399,7 +399,7 @@ public class UserModel {
 		return bean;
 	}
 	
-	// Change Password   //
+	// ----------------Change Password-----------------   //
 	
 	public boolean changePassword(Long id, String oldPassword, String newPassword)
 			throws RecordNotFoundException, ApplicationException {
@@ -468,19 +468,11 @@ public class UserModel {
 		flag = true;
 		} catch (Exception e) {
 			throw new ApplicationException("Please check your internet connection..!!");
-		}
+		} 
 		return flag;
 	}
 
-	/**
-	 * Registers a new user and sends confirmation email.
-	 *
-	 * @param bean the UserBean containing user details
-	 * @return primary key of the newly registered user
-	 * @throws DuplicateRecordException if login ID already exists
-	 * @throws ApplicationException if an application-level exception occurs
-	 */
-	
+    ///-----------------------Register User-----------------------------//
 	
 	public long registerUser(UserBean bean) throws DuplicateRecordException, ApplicationException {
 

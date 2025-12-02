@@ -1,6 +1,7 @@
 package in.co.rays.proj4.model;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -9,6 +10,7 @@ import in.co.rays.proj4.bean.CollegeBean;
 import in.co.rays.proj4.bean.StudentBean;
 import in.co.rays.proj4.exception.ApplicationException;
 import in.co.rays.proj4.exception.DatabaseException;
+import in.co.rays.proj4.exception.DuplicateRecordException;
 import in.co.rays.proj4.util.JDBCDataSource;
 public class StudentModel {
 	
@@ -45,7 +47,7 @@ public Integer nextPk() throws DatabaseException {
 
 //-----------------------------Add Method---------------------------------//
 
-public long add(StudentBean bean) throws ApplicationException {
+public long add(StudentBean bean) throws ApplicationException, DuplicateRecordException {
 
 	Connection conn = null;
 
@@ -53,12 +55,12 @@ public long add(StudentBean bean) throws ApplicationException {
 	CollegeBean collegeBean = collegeModel.findByPk(bean.getCollegeId());
 	bean.setCollegeName(collegeBean.getName());
 
-//	StudentBean existBean = findByEmailId(bean.getEmail());
+	StudentBean existBean = findByEmailId(bean.getEmail());
 	int pk = 0;
-//
-//	if (existBean != null) {
-//		throw new DuplicateRecordException("Email already exists");
-//	}
+
+	if (existBean != null) {
+		throw new DuplicateRecordException("Email already exists");
+	}
 
 	try {
 		pk = nextPk();
@@ -98,15 +100,15 @@ public long add(StudentBean bean) throws ApplicationException {
 
 //-------------------------------------Update Method---------------------------------//
 
-public void update(StudentBean bean) throws ApplicationException {
+public void update(StudentBean bean) throws ApplicationException, DuplicateRecordException {
 
 	Connection conn = null;
 
-//	StudentBean existBean = findByEmailId(bean.getEmail());
-//
-//	if (existBean != null && existBean.getId() != bean.getId()) {
-//		throw new DuplicateRecordException("Email Id is already exist");
-//	}
+	StudentBean existBean = findByEmailId(bean.getEmail());
+
+	if (existBean != null && existBean.getId() != bean.getId()) {
+		throw new DuplicateRecordException("Email Id is already exist");
+	}
 
 	CollegeModel collegeModel = new CollegeModel();
 	CollegeBean collegeBean = collegeModel.findByPk(bean.getCollegeId());

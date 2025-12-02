@@ -1,4 +1,3 @@
-
 <%@page import="in.co.rays.proj4.util.DataUtility"%>
 <%@page import="in.co.rays.proj4.util.ServletUtility"%>
 <%@page import="in.co.rays.proj4.controller.LoginCtl"%>
@@ -24,7 +23,7 @@
 
 		<div align="center">
 			<h1>Login</h1>
-			
+
 			<div style="height: 15px; margin-bottom: 12px">
 				<H3 align="center">
 					<font color="green"> <%=ServletUtility.getSuccessMessage(request)%>
@@ -35,7 +34,7 @@
 					</font>
 				</H3>
 			</div>
-			
+
 			<table>
 				<tr>
 					<th>Login ID:</th>
@@ -54,6 +53,14 @@
 					<td><input type="submit" name="operation"
 						value="<%=LoginCtl.OP_SIGN_IN%>"> <input type="submit"
 						name="operation" value="<%=LoginCtl.OP_SIGN_UP%>"></td>
+				</tr>
+				<tr>
+				    <th></th>
+				    <td></td>
+				</tr>
+				<tr>
+				    <th></th>
+				    <td><a href="<%=ORSView.FORGET_PASSWORD_CTL%>"><b>Forget my password?</b></a>&nbsp;</td>
 				</tr>
 			</table>
 		</div>

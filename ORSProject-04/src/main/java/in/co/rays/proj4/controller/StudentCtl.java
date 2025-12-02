@@ -20,7 +20,7 @@ import in.co.rays.proj4.util.DataValidator;
 import in.co.rays.proj4.util.PropertyReader;
 import in.co.rays.proj4.util.ServletUtility;
 
-@WebServlet(name = "StudentCtl", urlPatterns = { "/StudentCtl" })
+@WebServlet(name = "StudentCtl", urlPatterns = { "/ctl/StudentCtl" })
 public class StudentCtl extends BaseCtl {
 
 	@Override
@@ -147,7 +147,7 @@ public class StudentCtl extends BaseCtl {
 				long pk = model.add(bean);
 				ServletUtility.setBean(bean, request);
 				ServletUtility.setSuccessMessage("Student added successfully", request);
-			} catch (ApplicationException e) {
+			} catch (ApplicationException | DuplicateRecordException e) {
 				e.printStackTrace();
 				return;
 			}
@@ -162,6 +162,9 @@ public class StudentCtl extends BaseCtl {
 			} catch (ApplicationException e) {
 				e.printStackTrace();
 				return;
+			} catch (DuplicateRecordException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 		} else if (OP_CANCEL.equalsIgnoreCase(op)) {
 			ServletUtility.redirect(ORSView.STUDENT_LIST_CTL, request, response);
